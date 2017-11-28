@@ -6,9 +6,30 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding style=" background-image: url('assets/img/gamebkg.png');
+        background-size: cover;">
+  <button ion-button (click)="start()">開始遊戲</button>
+  <h2>分數：{{count}}分</h2>
+  <h2>剩餘時間：{{time}}秒</h2>
+<table id = "background">
+
+<tr>
+<td><img class="pic" src="{{img[0]}}" (click)="punch(0)"></td>
+<td><img class="pic" src="{{img[1]}}" (click)="punch(1)"></td>
+<td><img class="pic" src="{{img[2]}}" (click)="punch(2)" ></td>
+</tr>
+
+<tr>
+<td><img class="pic" src="{{img[3]}}" (click)="punch(3)"></td>
+<td><img class="pic" src="{{img[4]}}" (click)="punch(4)"></td>
+<td><img class="pic" src="{{img[5]}}" (click)="punch(5)"></td>
+</tr>
+
+<tr>
+<td><img class="pic" src="{{img[6]}}" (click)="punch(6)"></td>
+<td><img class="pic" src="{{img[7]}}" (click)="punch(7)"></td>
+<td><img class="pic" src="{{img[8]}}" (click)="punch(8)"></td>
+</tr>
+</table>
+
 </ion-content>
