@@ -16,14 +16,9 @@ export class HomePage {
   type: Array<any> = ['mouse', 'mouse', 'mouse', 'mouse', 'mouse', 'mouse', 'clamp', 'clamp', 'clamp']
   constructor(public navCtrl: NavController) {
     for (let i = 0; i < 9; i++) {
-      // this.img[i] = { pic: 'assets/img/gameframe.png', type: '' };
       this.img[i]='assets/img/gameframe.png';
     }
-    console.log(this.img)
-    //  this.img.forEach(element => {
-    //   element='assets/img/gameframe.png';
-    // });
-
+    // console.log(this.img)
   }
 
   start() {
@@ -33,10 +28,11 @@ export class HomePage {
     console.log(this.image)
     this.show();
     this.showtime();
-    // setTimeout(() => {
-    //   this.track();
-    // }, 1000)
   }
+
+  /**
+   * 倒數秒數
+   */
   showtime() {
     this.time -= 1;
     if (this.time > 0) {
@@ -45,6 +41,7 @@ export class HomePage {
       }, 1000)
     }
   }
+
   show() {
     if (this.time > 0) {
       this.ranK = Math.floor(Math.random() * 9);
@@ -52,10 +49,8 @@ export class HomePage {
       console.log(this.ranK)
       if (this.type[typeindex] == 'mouse') {
         this.img[this.ranK] = 'assets/img/show.png';
-        // this.img[this.ranK].type = 'mouse';
       } else {
         this.img[this.ranK] = 'assets/img/clamp.png';
-        // this.img[this.ranK].type = 'clamp';
       }
       this.timer = setTimeout(() => {
         this.hidden();
@@ -65,7 +60,6 @@ export class HomePage {
 
   hidden() {
     this.img[this.ranK] = 'assets/img/gameframe.png';
-    // this.img[this.ranK].type = '';
     this.show();
   }
 
@@ -75,11 +69,9 @@ export class HomePage {
       if (this.img[this.ranK] == 'assets/img/show.png') {
         this.count++;
         this.img[this.ranK] = 'assets/img/gameframe.png';
-        // this.img[this.ranK].type = '';
       } else {
         this.count--;
         this.img[this.ranK] = 'assets/img/gameframe.png';
-        // this.img[this.ranK].type = '';
       }
       this.ranK = null;
     }
